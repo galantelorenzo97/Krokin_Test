@@ -22,9 +22,21 @@ public class StudentClasses extends AppCompatActivity {
 
         mAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                //Add
             }
-        }
+        });
+
+        mDrop.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Drop
+            }
+        });
+
+        mEdit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Edit
+            }
+        });
     }
 
     Button mAdd = (Button) findViewById(R.id.add);
