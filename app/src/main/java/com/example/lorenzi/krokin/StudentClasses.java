@@ -20,6 +20,11 @@ public class StudentClasses extends AppCompatActivity {
         setSupportActionBar(toolbar);
         studentClassList.add(new Class("Software Engineering", "5.00-6.15P MW","N/A","HUM218", "Di Wang"));
 
+        mAdd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        }
     }
 
     Button mAdd = (Button) findViewById(R.id.add);
@@ -28,7 +33,25 @@ public class StudentClasses extends AppCompatActivity {
 
     ArrayList<Class> studentClassList = new ArrayList<Class>();
 
+    private void addClass()
+    {
 
+    }
 
+    private void dropClass(String toDelete)
+    {
+        for(int scan=0; scan<studentClassList.size(); scan++)
+        {
+            if (studentClassList.get(scan).getClassName().equals(toDelete))
+            {
+                studentClassList.remove(scan);
+            }
+        }
+    }
+
+    private void editClass()
+    {
+
+    }
 
 }
