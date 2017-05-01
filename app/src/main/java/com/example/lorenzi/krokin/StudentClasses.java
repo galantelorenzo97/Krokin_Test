@@ -18,6 +18,7 @@ public class StudentClasses extends AppCompatActivity {
         setContentView(R.layout.activity_student_classes);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        studentClassList.add(new Class("Software Engineering", "5.00-6.15P MW","N/A","HUM218", "Di Wang"));
 
     }
 
@@ -26,7 +27,7 @@ public class StudentClasses extends AppCompatActivity {
     Button mEdit = (Button) findViewById(R.id.edit);
 
     ArrayList<Class> studentClassList = new ArrayList<Class>();
-    studentClassList.add(new Class("Software Engineering", "5.00-6.15P MW","N/A","HUM218", "Di Wang"));
+
 
 
 
