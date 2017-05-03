@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="KROKIN"
+        android:layout_marginTop="10dp"
         android:textSize="50sp"
         android:gravity="center_horizontal"
         android:id="@+id/krokin"
