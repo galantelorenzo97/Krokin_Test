@@ -24,6 +24,7 @@
         android:layout_marginRight="25dp"
         android:text="LOGIN"
         android:textSize="25sp"
+        android:onClick=""
         />
 
     <Button
@@ -34,6 +35,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:text="REGISTER"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:onClick=""/>
 
 </RelativeLayout>
