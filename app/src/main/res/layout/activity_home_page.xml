@@ -11,41 +11,57 @@
     tools:context="com.example.lorenzi.krokin.HomePage">
 
     <Button
-        android:text="ACADEMICS"
-        android:layout_width="wrap_content"
+        android:id="@+id/acad"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="ACADEMICS"
         android:textAllCaps="true"
-        android:id="@+id/acad" />
+        android:onClick="toAcademics"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:textAllCaps="true"
-        android:text="Calendar"
-        android:layout_width="wrap_content"
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/act"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
-        android:id="@+id/calendar" />
+        android:background="@color/colorPrimary"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="Calendar"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:text="SETTINGS"
-        android:layout_width="wrap_content"
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/calendar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
-        android:id="@+id/settings"
-        />
+        android:background="@color/colorPrimary"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="SETTINGS"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/act"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ACTIVITIES"
+        android:layout_below="@id/acad"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
-        android:layout_below="@id/acad"
-        android:id="@+id/act"/>
+        android:background="@color/colorPrimary"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="ACTIVITIES"
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>

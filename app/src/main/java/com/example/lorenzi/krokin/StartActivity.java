@@ -1,5 +1,6 @@
 package com.example.lorenzi.krokin;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,18 +17,20 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start2);
 
         Button mLoginCtrl = (Button) findViewById(R.id.login_btn);
+        Button mRegisterCtrl = (Button) findViewById(R.id.register_btn);
+
+
         mLoginCtrl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //10:44
 
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(StartActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.login_dialog, null);
                 final EditText mUser = (EditText) mView.findViewById(R.id.userInput);
                 final EditText mPassword = (EditText) mView.findViewById(R.id.passwordInput);
-                Button mLoginCtrl = (Button) mView.findViewById(R.id.login_dialog_btn);
+                Button mLoginCtrlDialog = (Button) mView.findViewById(R.id.login_dialog_btn);
 
-                mLoginCtrl.setOnClickListener(new View.OnClickListener() {
+                mLoginCtrlDialog.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view)
                     {
@@ -39,13 +42,51 @@ public class StartActivity extends AppCompatActivity {
                                             "Login Successful",
                                             Toast.LENGTH_SHORT).show();
 
+                            startActivity(new Intent(StartActivity.this, HomePage.class));
+
                         }
                         else
                         {
-
+                            Toast.makeText(StartActivity.this,
+                                    "Invalid Login",
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+            }
+        });
+
+        mRegisterCtrl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(StartActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.register_dialog, null);
+                final EditText mUser = (EditText) mView.findViewById(R.id.userInput);
+                final EditText mPassword = (EditText) mView.findViewById(R.id.passwordInput);
+                Button mRegisterCtrlDialog = (Button) mView.findViewById(R.id.register_dialog_btn);
+
+            mRegisterCtrlDialog.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                    user student1 = new user(mUser.getText().toString(),mPassword.getText().toString(),002);
+
+                    Toast.makeText(StartActivity.this,
+                            "Registration Successful. Welcome " + mUser.getText().toString(),
+                            Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(StartActivity.this, HomePage.class));
+                }
+            });
+
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+
             }
         });
     }
