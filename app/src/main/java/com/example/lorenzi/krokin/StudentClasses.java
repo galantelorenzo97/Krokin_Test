@@ -38,8 +38,8 @@ public class StudentClasses extends AppCompatActivity {
             public void onClick(View v) {
                 //Edit
             }
-        });
-
+          });
+        }
     }
 
     Button mAdd = (Button) findViewById(R.id.add);
