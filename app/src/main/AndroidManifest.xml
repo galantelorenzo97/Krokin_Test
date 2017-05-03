@@ -27,7 +27,8 @@
             android:name=".StudentClasses"
             android:label="@string/title_activity_student_classes"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Calendar"></activity>
+        <activity android:name=".Calendar" />
+        <activity android:name=".StartActivity"></activity>
     </application>
 
 </manifest>

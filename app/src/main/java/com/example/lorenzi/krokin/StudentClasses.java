@@ -40,7 +40,7 @@ public class StudentClasses extends AppCompatActivity {
             }
           });
         }
-    }
+
 
     Button mAdd = (Button) findViewById(R.id.add);
     Button mDrop = (Button) findViewById(R.id.drop);
