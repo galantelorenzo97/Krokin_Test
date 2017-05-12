@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,14 +15,15 @@ import java.util.ArrayList;
 
 public class Academics extends AppCompatActivity {
 
-    //private ArrayList<TextView> tx = new ArrayList<TextView>();
+    public static ArrayList<TextView> tx = new ArrayList<TextView>();
 
-    public static ArrayList<String> list = new ArrayList<String>();
+
+    /*public static ArrayList<String> list = new ArrayList<String>();
     static String C1 = "ENGLIGH";
     static String C2 = "MATH";
     static String C3 = "ROCK CLIMBING";
     static String C4 = "EXPLOSIVES & WELDING";
-
+*/
 /*
     public static ArrayList<classes> clist = new ArrayList<classes>();
 
@@ -35,7 +38,16 @@ public class Academics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_academics);
+        TextView testing = new TextView(Academics.this);
+        LinearLayout theElderScrolls = (LinearLayout) findViewById(R.id.textContain);
 
+        testing.setText("Test");
+
+
+        theElderScrolls.addView(testing);
+
+
+        /*
         ListView LV = (ListView)findViewById(R.id.classView);
 
         ArrayAdapter<String> AA = new ArrayAdapter<String>(
@@ -51,6 +63,7 @@ public class Academics extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "CLASS " + sc, Toast.LENGTH_LONG).show();
             }
         });
+    */
     }
 }
     /*    clist.add(C1);
