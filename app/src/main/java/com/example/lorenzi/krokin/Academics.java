@@ -6,12 +6,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Academics extends AppCompatActivity {
-    public static ArrayList<String> list = new ArrayList<>();
+
+    //private ArrayList<TextView> tx = new ArrayList<TextView>();
+
+    public static ArrayList<String> list = new ArrayList<String>();
     static String C1 = "ENGLIGH";
     static String C2 = "MATH";
     static String C3 = "ROCK CLIMBING";

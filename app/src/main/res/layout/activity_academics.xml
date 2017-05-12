@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.lorenzi.krokin.Academics">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,11 +42,22 @@
             />
     </LinearLayout>
 
-    <ListView
+    <ScrollView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/classView">
+        android:id="@+id/ClassList"
+        android:layout_margin="25dp">
 
-    </ListView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TESTING"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            />
+
+    </ScrollView>
 
 </LinearLayout>
