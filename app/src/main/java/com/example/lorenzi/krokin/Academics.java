@@ -34,24 +34,29 @@ public class Academics extends AppCompatActivity {
         // CREATE CLASS ARRAY
         CLASS_ARRAY();
 
-        // UPDATE GUI
+        // GUI LAYOUT ON THE PAGE
         GUI_UPDATE();
 
+        // ADD BUTTON
         Button mAddClassBtn = (Button) findViewById(R.id.add_class);
         mAddClassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                // POP UP SCREEN PROMPTING FOR CLASS INFORMATION
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(Academics.this);
                 View mView = getLayoutInflater().inflate(R.layout.add_class_dialog, null);
 
+                // GATHER USER INFO
                 final EditText mClassName = (EditText) mView.findViewById(R.id.cName_in);
                 final EditText mClassDays = (EditText) mView.findViewById(R.id.cDays_in);
                 final EditText mClassTimes = (EditText) mView.findViewById(R.id.cTime_in);
                 final EditText mClassProf = (EditText) mView.findViewById(R.id.cProf_in);
 
+                // ACCEPT CHANGE BUTTON
                 Button mAddCtrlBtn = (Button) mView.findViewById(R.id.class_add_dialog_btn);
 
+                // DISPLAY DIALOG
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
                 dialog.show();
@@ -59,12 +64,13 @@ public class Academics extends AppCompatActivity {
                 mAddCtrlBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        // SET C5 TO THE NEW ADDED CLASS
                         c5.setName(mClassName.getText().toString());
                         c5.setDays(mClassDays.getText().toString());
                         c5.setTime(mClassTimes.getText().toString());
                         c5.setProfessor(mClassProf.getText().toString());
 
-                        // CREATE NEW ARRAY FOR CLASSES
+                        // CREATE NEW ARRAY FOR CLASS DISPLAY
                         CLASS_ARRAY();
                         GUI_UPDATE();
                         AA.notifyDataSetChanged();
