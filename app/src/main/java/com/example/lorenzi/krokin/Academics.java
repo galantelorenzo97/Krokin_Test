@@ -15,34 +15,29 @@ import java.util.List;
 
 public class Academics extends AppCompatActivity {
 
-    ListView simpleList;
+    ArrayAdapter<String> AA;
+    ListView LV;
 
-    classes c1 = new classes("Phone dialing", "TF", "7.00-8.00", "Mr. Professor");
-    classes c2 = new classes("Computer Hell", "SUN", "8.00A-8.00P", "Paul Zuckerman");
-    classes c3 = new classes("Bart Simpsoning", "MR", "5.00-6.15PM", "Leaky Bum");
-    classes c4 = new classes("Explosives", "MW", "12.30-1.45", "Hugh G. Rection");
+    classes c1 = new classes("ROCK CLIMBING", "TF", "7:00A-8:00A", "Mr. Geodude");
+    classes c2 = new classes("ENGLISH", "MW", "8:00A-9:00A", "Mrs. Lily");
+    classes c3 = new classes("TROUBLE MAKING", "MR", "5:00P-6:15P", "Mr. Prof");
+    classes c4 = new classes("FIREWORKS", "MW", "12.30P-1.45P", "Mr. Sun");
     classes c5 = new classes("", "", "", "");
 
-    String someList[] = {c1.getName() + "\n" + c1.getDays() + ", " + c1.getTime() + ", " + c1.getProfessor()
-            , c2.getName() + "\n" + c2.getDays() + ", " + c2.getTime() + ", " + c2.getProfessor()
-            , c3.getName() + "\n" + c3.getDays() + ", " + c3.getTime() + ", " + c3.getProfessor()
-            , c4.getName() + "\n" + c4.getDays() + ", " + c4.getTime() + ", " + c4.getProfessor()
-            , c5.getName() + "\n" + c5.getDays() + ", " + c5.getTime() + ", " + c5.getProfessor()};
-
-    String listOC[] = {"ENGLISH", "ROCK CLIMBING", "EXPLOSIVES", "WATCH BUILDINGS"};
+    String[] CLASSarray = new String[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_academics);
 
-        simpleList = (ListView) findViewById(R.id.classListView);//
+        // CREATE CLASS ARRAY
+        CLASS_ARRAY();
 
-        final ArrayAdapter<String> AA = new ArrayAdapter<String>(this, R.layout.activity_list_view, R.id.listTextView, someList);
-        simpleList.setAdapter(AA);
+        // UPDATE GUI
+        GUI_UPDATE();
 
         Button mAddClassBtn = (Button) findViewById(R.id.add_class);
-
         mAddClassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,29 +53,39 @@ public class Academics extends AppCompatActivity {
                 Button mAddCtrlBtn = (Button) mView.findViewById(R.id.class_add_dialog_btn);
 
                 mBuilder.setView(mView);
-                AlertDialog dialog = mBuilder.create();
+                final AlertDialog dialog = mBuilder.create();
                 dialog.show();
 
                 mAddCtrlBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        c5.setName(mClassName.getText().toString());
+                        c5.setDays(mClassDays.getText().toString());
+                        c5.setTime(mClassTimes.getText().toString());
+                        c5.setProfessor(mClassProf.getText().toString());
 
-
-                        classes class_input = new classes(mClassName.getText().toString(), mClassDays.getText().toString(), mClassTimes.getText().toString(), mClassProf.getText().toString());
-                        c5 = class_input;
+                        // CREATE NEW ARRAY FOR CLASSES
+                        CLASS_ARRAY();
+                        GUI_UPDATE();
                         AA.notifyDataSetChanged();
-                        //simpleList.setAdapter(AA);
-
-                        if (1 == 1)
-                        {
-                            Toast.makeText(Academics.this,
-                                    "TESTING",
-                                    Toast.LENGTH_SHORT).show();
-                        }
+                        dialog.dismiss();
                     }
+                });
+            }
+        });
+    }
 
+    public void GUI_UPDATE(){
+        LV = (ListView) findViewById(R.id.classListView);
+        AA = new ArrayAdapter<String>(this, R.layout.activity_list_view, R.id.listTextView, CLASSarray);
+        LV.setAdapter(AA);
+    }
 
-        }
-    );}
-
-    });}}
+    public void CLASS_ARRAY(){
+        CLASSarray[0] = c1.getName() + "\n" + c1.getDays() + "  " + c1.getTime() + "  " + c1.getProfessor();
+        CLASSarray[1] = c2.getName() + "\n" + c2.getDays() + "  " + c2.getTime() + "  " + c2.getProfessor();
+        CLASSarray[2] = c3.getName() + "\n" + c3.getDays() + "  " + c3.getTime() + "  " + c3.getProfessor();
+        CLASSarray[3] = c4.getName() + "\n" + c4.getDays() + "  " + c4.getTime() + "  " + c4.getProfessor();
+        CLASSarray[4] = c5.getName() + "\n" + c5.getDays() + "  " + c5.getTime() + "  " + c5.getProfessor();
+    }
+}
