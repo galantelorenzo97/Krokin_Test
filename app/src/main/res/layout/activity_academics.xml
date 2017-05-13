@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.lorenzi.krokin.Academics">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/add_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="ADD"
+        android:textAllCaps="true"
+        android:onClick=""
+        android:textColor="@android:color/white" />
+
+    <ListView
+        android:id="@+id/classListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/colorPrimary"
+        android:dividerHeight="1dp"
+        android:listSelector="#e6f7ff"/>
+
+</LinearLayout>
