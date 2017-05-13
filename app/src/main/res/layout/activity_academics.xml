@@ -8,7 +8,7 @@
     tools:context="com.example.lorenzi.krokin.Academics">
 
     <Button
-        android:id="@+id/add_c"
+        android:id="@+id/add_class"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
