@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lorenzi.krokin.Academics">
+
+    <Button
+        android:id="@+id/ACTIVITYbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="ADD"
+        android:textAllCaps="true"
+        android:onClick=""
+        android:textColor="@android:color/white" />
+
+    <ListView
+        android:id="@+id/ACTIVITY_LV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/colorPrimary"
+        android:dividerHeight="1dp"
+        android:listSelector="#e6f7ff"/>
+
+</LinearLayout>
