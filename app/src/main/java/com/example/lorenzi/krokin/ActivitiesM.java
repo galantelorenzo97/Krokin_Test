@@ -12,9 +12,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ActivitiesM extends AppCompatActivity {
 
+    /*
     ArrayAdapter<String> AA;
     ListView LV;
 
@@ -23,13 +25,16 @@ public class ActivitiesM extends AppCompatActivity {
     activities A3 = new activities("STUDY SESSION", "F", "10:00P-11:00P");
     activities A4 = new activities("", "", "");
 
-    String[] ACTarr = new String[5];
+    String[] ACTarr = new String[4];
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_academics);
-
+        setContentView(R.layout.activity_activities);
+    }
+}
+    /*
         // CREATE CLASS ARRAY
         ACT_arr();
 
@@ -37,36 +42,35 @@ public class ActivitiesM extends AppCompatActivity {
         GUI_UPDATE();
 
         // ADD BUTTON
-        Button mAddClassBtn = (Button) findViewById(R.id.add_class);
-        mAddClassBtn.setOnClickListener(new View.OnClickListener() {
+        Button addActivity = (Button) findViewById(R.id.ACTIVITYbutton);
+        addActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 // POP UP SCREEN PROMPTING FOR CLASS INFORMATION
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(ActivitiesM.this);
-                View mView = getLayoutInflater().inflate(R.layout.add_class_dialog, null);
+                View mView = getLayoutInflater().inflate(R.layout.activity_add_dialog, null);
 
                 // GATHER USER INFO
-                final EditText mClassName = (EditText) mView.findViewById(R.id.cName_in);
-                final EditText mClassDays = (EditText) mView.findViewById(R.id.cDays_in);
-                final EditText mClassTimes = (EditText) mView.findViewById(R.id.cTime_in);
-                final EditText mClassProf = (EditText) mView.findViewById(R.id.cProf_in);
+                final EditText actName = (EditText) mView.findViewById(R.id.actName);
+                final EditText actDay = (EditText) mView.findViewById(R.id.actDays);
+                final EditText actTime = (EditText) mView.findViewById(R.id.actTime);
 
                 // ACCEPT CHANGE BUTTON
-                Button mAddCtrlBtn = (Button) mView.findViewById(R.id.class_add_dialog_btn);
+                Button mAddAct = (Button) mView.findViewById(R.id.actOKBUTTON);
 
                 // DISPLAY DIALOG
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
                 dialog.show();
 
-                mAddCtrlBtn.setOnClickListener(new View.OnClickListener() {
+                mAddAct.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         // SET C5 TO THE NEW ADDED CLASS
-                        A4.setName(mClassName.getText().toString());
-                        A4.setDays(mClassDays.getText().toString());
-                        A4.setTime(mClassTimes.getText().toString());
+                        A4.setName(actName.getText().toString());
+                        A4.setDays(actDay.getText().toString());
+                        A4.setTime(actTime.getText().toString());
 
 
                         // CREATE NEW ARRAY FOR CLASS DISPLAY
@@ -81,8 +85,8 @@ public class ActivitiesM extends AppCompatActivity {
     }
 
     public void GUI_UPDATE(){
-        LV = (ListView) findViewById(R.id.classListView);
-        AA = new ArrayAdapter<String>(this, R.layout.activity_list_view, R.id.listTextView, ACTarr);
+        LV = (ListView) findViewById(R.id.ACTIVITY_LV);
+        AA = new ArrayAdapter<String>(this, R.layout.activity_list_view, R.id.actLV, ACTarr);
         LV.setAdapter(AA);
     }
 
@@ -92,4 +96,4 @@ public class ActivitiesM extends AppCompatActivity {
         ACTarr[2] = A3.getName() + "\n" + A3.getDays() + "  " + A3.getTime();
         ACTarr[3] = A4.getName() + "\n" + A4.getDays() + "  " + A4.getTime();
     }
-}
+}*/
